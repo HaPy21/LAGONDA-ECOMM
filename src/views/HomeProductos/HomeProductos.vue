@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import ProductBox from 'C:/Users/renzo/Desktop/JSnew/Lagondapreset/LAGONDA-ECOMM/src/components/ProductBox.vue'
+import ProductBox from '/src/components/ProductBox.vue'
 
 export default {
   name: 'HomeProductos',
@@ -33,27 +33,31 @@ export default {
       productSize: 0,
       products: [{
         id: 1,
-        name: 'prod1',
+        name: 'Rin1',
         price: 1100,
-        model: "blabla"
+        model: "Primer rin agregado",
+        imageUrl: "https://i.pinimg.com/originals/2d/c6/f3/2dc6f35062469c7600ae0664ab124438.png"
       },
       {
         id: 2,
-        name: 'prod2',
+        name: 'Rin2',
         price: 2100,
-        model: "sssss"
+        model: "Segundo Rin agregado",
+        imageUrl: "https://i.pinimg.com/736x/40/21/45/4021455344b46d831c12eb348437242b--diamond-cuts-wheels.jpg"
       },
       {
         id: 3,
-        name: 'prod3',
+        name: 'Rin3',
         price: 400,
-        model: "dsadsa"
+        model: "Tercer Rin agregado",
+        imageUrl: "https://cfc7329ad537523a5de1-b21544d490ba797ec9de9d17e947de3d.ssl.cf1.rackcdn.com/wk-46109653_8e4d17b5.jpg"
       },
       {
         id: 4,
-        name: 'prod4',
+        name: 'Rin4',
         price: 10,
-        model: "nfn"
+        model: "Cuarto Rin agregado",
+        imageUrl: "https://i.pinimg.com/originals/b5/f4/fd/b5f4fd40b19b5cb49ba65d54d6c3d2d6.jpg"
       },
       ]
     }

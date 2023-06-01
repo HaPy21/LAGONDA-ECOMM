@@ -1,20 +1,23 @@
 <template>
-    <div class="card h-100 w-100">
+    <div class="card h-100 w-100" >
         <div class="embed-responsive embed-responsive-16by9">
-            <img
+            <img @click="redirectToProductDetail(product.id)"
                 class="card-img-top embed-responsive-item"
-                :src="dsad"
+                :src="product.imageUrl"
                 alt="Card image cap"
             />
         </div>
         <div class="card-body">
-            <h5 class="card-title">{{ product.name }}</h5>
+            <h3 class="card-title">{{ product.name }}</h3>
+            <h4 class="card-text"> S/. {{ product.price }}</h4>
             <p class="card-text">
-                {{ product.model}}...
+                {{product.model}}
             </p>
-            <router-link :to="{name: 'EditProduct', params: {id: product.id}}">
+            <!--Todavia no se ha definido logica para addproduct ni su link de router-->
+            <!--<router-link :to="{name: 'AddProduct', params: {id: product.id}}">
                 <button class="btn btn-primary">Agregar a Carrito</button>
-            </router-link>
+            </router-link>-->
+            <button type="button" class="btn btn-primary" @click="addToCart(product)">Agregar a Carrito</button>
         </div>
     </div>
 </template>
@@ -25,19 +28,24 @@
             product: {
                 type: Object,
                 required: true
-            },
-            methods: {
+            }
+        },
+        methods: {
                 addToCart(product) {
                     // Implement your add to cart logic here
-                    console.log('Added to cart:', product);
+                    console.log('Agregado al carrito:', product);
+                },
+                redirectToProductDetail(productId) {
+                    console.log('Dirigido al detalle del producto: ', productId);
+                    this.$router.push(`/products/${productId}`);
                 }
             }
-        }
     }
 </script>
 <style scoped>
     .card-img-top {
         object-fit: cover;
+        cursor: pointer;
     }
 </style>
 <!--<template>
