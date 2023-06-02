@@ -8,16 +8,6 @@
       <p><strong>Correo Electrónico:</strong> {{ user.email }}</p>
       <p><strong>Número:</strong> {{ user.number }}</p>
     </div>
-    <div class="orders">
-      <h2>Pedidos</h2>
-      <ul>
-        <li v-for="order in orders" :key="order.id">
-          <p><strong>Fecha:</strong> {{ order.date }}</p>
-          <p><strong>Total:</strong> {{ order.total }}</p>
-          <p><strong>Estado:</strong> {{ order.status }}</p>
-        </li>
-      </ul>
-    </div>
     <button @click="modificarContraseña">Modificar Contraseña</button>
   </div>
 </template>
@@ -33,26 +23,6 @@ export default {
         email: 'johndoe@example.com',
         number: '1234567890'
       },
-      orders: [
-        {
-          id: 1,
-          date: '2023-05-20',
-          total: '$100.00',
-          status: 'En proceso'
-        },
-        {
-          id: 2,
-          date: '2023-05-15',
-          total: '$50.00',
-          status: 'Completado'
-        },
-        {
-          id: 3,
-          date: '2023-05-10',
-          total: '$75.00',
-          status: 'En proceso'
-        }
-      ]
     };
   },
 };
@@ -60,7 +30,7 @@ export default {
 <style>
 .container {
   display: flex;
-  margin-top: 11rem;
+  margin-top: 1rem;
   flex-direction: column;
   align-items: center;
   justify-content: center;
