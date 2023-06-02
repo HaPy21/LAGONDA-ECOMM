@@ -8,7 +8,7 @@
       <p><strong>Correo Electrónico:</strong> {{ user.email }}</p>
       <p><strong>Número:</strong> {{ user.number }}</p>
     </div>
-    <button @click="modificarContraseña">Modificar Contraseña</button>
+    <button v-on:click="cambiarContra()" @click="modificarContraseña">Modificar Contraseña</button>
   </div>
 </template>
 
@@ -25,6 +25,11 @@ export default {
       },
     };
   },
+  methods: {
+    cambiarContra(){
+      this.$router.push('/CambiarContra');
+    }
+  }
 };
 </script>
 <style>
