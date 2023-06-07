@@ -1,17 +1,17 @@
 <template>
     <div class="card h-100 w-100" >
         <div class="embed-responsive embed-responsive-16by9">
-            <img @click="redirectToProductDetail(product.id)"
+            <img @click="redirectToProductDetail(product._id)"
                 class="card-img-top embed-responsive-item"
-                :src="product.imageUrl"
+                :src="product.portada"
                 alt="Card image cap"
             />
         </div>
         <div class="card-body">
-            <h3 class="card-title">{{ product.name }}</h3>
-            <h4 class="card-text"> S/. {{ product.price }}</h4>
+            <h3 class="card-title">{{ product.titulo }}</h3>
+            <h4 class="card-text"> S/. {{ product.precio }}</h4>
             <p class="card-text">
-                {{product.model}}
+                {{product.marca}}
             </p>
             <!--Todavia no se ha definido logica para addproduct ni su link de router-->
             <!--<router-link :to="{name: 'AddProduct', params: {id: product.id}}">

@@ -11,7 +11,7 @@
             </div>
             <!-- Mostrar productos-->
             <div class="row">
-              <div v-for="product in products" :key="products.id" class="col-md-6 col-xl-4 col-12 pt3 justify-content-around d-flex">
+              <div v-for="product in products" :key="products[0]._id" class="col-md-6 col-xl-4 col-12 pt3 justify-content-around d-flex">
                 <ProductBox :product="product" />
               </div>
             </div>
@@ -22,16 +22,36 @@
 
 <script>
 import ProductBox from '/src/components/ProductBox.vue'
+import axios from 'axios';
 
 export default {
   name: 'HomeProductos',
   components: {
     ProductBox
   },
+  methods:{
+        initData(){
+          axios.get(this.$url+'/getAllProductos',{
+            headers:{
+              'Content-Type':'application/json',
+              'Authorization': this.$store.state.token,
+            }
+          }).then((result)=> {
+            // console.log(result.data)
+            this.products=result.data
+            console.log(this.products)
+          }
+            ).catch(
+              (err)=>{ console.log(err)}
+              )
+        },
+      },
+      beforeMount(){
+          this.initData()
+  },
   data() {
     return {
-      productSize: 0,
-      products: [{
+      /* products: [{
         id: 1,
         name: 'Rin1',
         price: 1100,
@@ -59,7 +79,8 @@ export default {
         model: "Cuarto Rin agregado",
         imageUrl: "https://i.pinimg.com/originals/b5/f4/fd/b5f4fd40b19b5cb49ba65d54d6c3d2d6.jpg"
       },
-      ]
+      ], */
+      products: []
     }
   }
 };
