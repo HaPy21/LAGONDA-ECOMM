@@ -93,6 +93,7 @@ export default {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  font-family: Arial, sans-serif;
 }
 
 .form {
