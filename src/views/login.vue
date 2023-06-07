@@ -109,7 +109,7 @@ export default {
             }
             else{
                 this.mensajeError='';
-                axios.post(this.$url+'/registrarCliente',this.cliente,{
+                axios.post(this.$url+'/registrarCliente',this.$params.id,this.cliente,{
                     headers:{
                         'Content-Type': 'application/json'
                     }
